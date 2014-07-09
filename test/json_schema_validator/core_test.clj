@@ -41,3 +41,7 @@
 (deftest test-validator
   (testing "testing the validator's true case"
     (is (empty? (validator {:id 9})))))
+
+(deftest test-validator-false
+  (testing "testing the validator's false case"
+    (is ((complement empty?) (validator 9)))))

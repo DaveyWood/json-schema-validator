@@ -21,7 +21,7 @@
 
 (defn build-validator-list-for-node [node]
   "builds a list of validators for a single node"
-  (list validate-is-object));TODO: actually build some validators
+  (list (get type-validators (:type node))));TODO: validate properties, required, etc
 
 (defn applier [value]
   "applies the validation function"
