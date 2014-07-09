@@ -36,7 +36,7 @@
   (testing "testing the false case for is integer"
     (is (= "blah is not an integer" (validate-is-integer 2.2 "blah is not an integer")))))
 
-(def validator (build-validator-for-node {:type "object"})) ;builds a very basic validator
+(def validator (build-validator-from-schema schema)) ;builds a very basic validator
 
 (deftest test-validator
   (testing "testing the validator's true case"

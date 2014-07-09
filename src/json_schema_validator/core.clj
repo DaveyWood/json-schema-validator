@@ -30,3 +30,8 @@
 (defn build-validator-for-node [node]
   "builds a validator for a single node"
   #(filter (complement nil?) (map (applier %) (build-validator-list-for-node node) )))
+
+
+(defn build-validator-from-schema [schema]
+  "takes a json schema as a string and returns a function to validate maps based on that schema"
+  (build-validator-for-node (json/read-str schema :key-fn keyword)))
